@@ -1,0 +1,659 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://www.davita.com/baxter.cycler.schema.json",
+    "type": "object",
+    "title": "Baxter Cycler Treatment",
+    "description": "This is the json schema for a single cycler treatment by a patient from the Baxter cycler.",
+    "default": {},
+    "examples": [
+        {
+            "Patient Info": {
+                "Baxter Patient ID": "ST000-9091",
+                "Clinic Patient ID": "XYZ.PQR.002"
+            },
+            "Treatment Time": {
+                "Date": "07-Dec-2020",
+                "Time": "20:49"
+            },
+            "Vitals": {
+                "Pre-Treatment": {
+                    "Weight": "95.8",
+                    "Blood Pressure": "70",
+                    "Pulse": "95",
+                    "Glucose": "100",
+                    "Temperature": "98.6"
+                }
+            },
+            "Prescription": {
+                "Device Program Name": "Daily - Primary",
+                "Therapy Type/Time": "Time-Based APD/08:00",
+                "Number of Day Cycles": "1",
+                "Number of Night Cycles": "3",
+                "Fill Volume": "2500",
+                "Fill Time": "",
+                "Dwell Time": "01:23",
+                "Drain Time": "",
+                "Drain Volume": ""
+            },
+            "Actual Therapy": [
+                {
+                    "Therapy Cycle Time": "20:49:05",
+                    "Cycle Type": "Initial Drain",
+                    "CycleAttributes": {
+                        "Fill Volume (mL)": "",
+                        "Fill Time (HH:MM)": "",
+                        "Dwell Time (HH:MM)": "",
+                        "Drain Time (HH:MM)": "00:02",
+                        "Drain Volume (mL)": "34",
+                        "UF/Cycle (mL)": "11"
+                    }
+                },
+                {
+                    "Therapy Cycle Time": "20:51:09",
+                    "Cycle Type": "Night Cycle 1",
+                    "CycleAttributes": {
+                        "Fill Volume (mL)": "2500",
+                        "Fill Time (HH:MM)": "00:14",
+                        "Dwell Time (HH:MM)": "01:21",
+                        "Drain Time (HH:MM)": "00:20",
+                        "Drain Volume (mL)": "2304",
+                        "UF/Cycle (mL)": "-196"
+                    }
+                }
+            ],
+            "Total Therapy": {
+                "Total Therapy Volume": "10000",
+                "Last Fill Volume": "",
+                "Last Solution Type": "Same",
+                "Manual Exchange Count": ""
+            }
+        }
+    ],
+    "required": [
+        "Patient Info",
+        "Treatment Time",
+        "Vitals",
+        "Prescription",
+        "Actual Therapy",
+        "Total Therapy"
+    ],
+    "properties": {
+        "Patient Info": {
+            "$id": "#/properties/Patient%20Info",
+            "type": "object",
+            "title": "The Patient Info schema",
+            "description": "This is the grouping of patient IDs across multiple systems.",
+            "default": {},
+            "examples": [
+                {
+                    "Baxter Patient ID": "ST000-9091",
+                    "Clinic Patient ID": "XYZ.PQR.002"
+                }
+            ],
+            "required": [
+                "Baxter Patient ID"
+            ],
+            "properties": {
+                "Baxter Patient ID": {
+                    "$id": "#/properties/Patient%20Info/properties/Baxter%20Patient%20ID",
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "The Baxter Patient ID schema",
+                    "description": "This is the Baxter Patient ID of FHIR element Patient.id .",
+                    "default": "",
+                    "examples": [
+                        "ST000-9091"
+                    ]
+                },
+                "Clinic Patient ID": {
+                    "$id": "#/properties/Patient%20Info/properties/Clinic%20Patient%20ID",
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "The Clinic Patient ID schema",
+                    "description": "This is the DaVita patient ID.",
+                    "default": "",
+                    "examples": [
+                        "XYZ.PQR.002"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "Treatment Time": {
+            "$id": "#/properties/Treatment%20Time",
+            "type": "object",
+            "max length": 8,
+            "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+            "title": "The Treatment Time schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "Date": "07-Dec-2020",
+                    "Time": "20:49"
+                }
+            ],
+            "properties": {
+                "Date": {
+                    "$id": "#/properties/Treatment%20Time/properties/Date",
+                    "type": "string",
+                    "maxLength": 11,
+                    "title": "The Date schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "07-Dec-2020"
+                    ]
+                },
+                "Time": {
+                    "$id": "#/properties/Treatment%20Time/properties/Time",
+                    "type": "string",
+                    "maxLength": 5,
+                    "pattern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$",
+                    "title": "The Time schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "20:49"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "Vitals": {
+            "$id": "#/properties/Vitals",
+            "type": "object",
+            "title": "The Vitals schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "Pre-Treatment": {
+                        "Weight": "95.8",
+                        "Blood Pressure": "70",
+                        "Pulse": "95",
+                        "Glucose": "100",
+                        "Temperature": "98.6"
+                    }
+                }
+            ],
+            "required": [
+                "Pre-Treatment"
+            ],
+            "properties": {
+                "Pre-Treatment": {
+                    "$id": "#/properties/Vitals/properties/Pre-Treatment",
+                    "type": "object",
+                    "title": "The Pre-Treatment schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "Weight": "95.8",
+                            "Blood Pressure": "70",
+                            "Pulse": "95",
+                            "Glucose": "100",
+                            "Temperature": "98.6"
+                        }
+                    ],
+                    "required": [
+                        "Weight",
+                        "Blood Pressure",
+                        "Pulse",
+                        "Glucose",
+                        "Temperature"
+                    ],
+                    "properties": {
+                        "Weight": {
+                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Weight",
+                            "type": "string",
+                            "pattern": "^(\\d{1,4}).[0-9]$",
+                            "title": "The Weight schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "95.8"
+                            ]
+                        },
+                        "Blood Pressure": {
+                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Blood%20Pressure",
+                            "type": "string",
+                            "maxLength": 50,
+                            "title": "The Blood Pressure schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "70"
+                            ]
+                        },
+                        "Pulse": {
+                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Pulse",
+                            "type": "string",
+                            "maxLength": 50,
+                            "pattern": "^(\\d{1,4})$",
+                            "title": "The Pulse schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "95"
+                            ]
+                        },
+                        "Glucose": {
+                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Glucose",
+                            "type": "string",
+                            "maxLength": 50,
+                            "pattern": "^(\\d{1,4})$",
+                            "title": "The Glucose schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "95"
+                            ]
+                        },
+                        "Temperature": {
+                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Temperature",
+                            "type": "string",
+                            "maxLength": 50,
+                            "pattern": "^(\\d{1,4}).[0-9]$",
+                            "title": "The Temperature schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "98.6"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": true
+        },
+        "Prescription": {
+            "$id": "#/properties/Prescription",
+            "type": "object",
+            "title": "The Prescription schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "Device Program Name": "Daily - Primary",
+                    "Therapy Type/Time": "Time-Based APD/08:00",
+                    "Number of Day Cycles": "1",
+                    "Number of Night Cycles": "3",
+                    "Fill Volume": "2500",
+                    "Fill Time": "",
+                    "Dwell Time": "01:23",
+                    "Drain Time": "",
+                    "Drain Volume": ""
+                }
+            ],
+            "properties": {
+                "Device Program Name": {
+                    "$id": "#/properties/Prescription/properties/Device%20Program%20Name",
+                    "type": "string",
+                    "maxLength": 255,
+                    "title": "The Device Program Name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Daily - Primary"
+                    ]
+                },
+                "Therapy Type/Time": {
+                    "$id": "#/properties/Prescription/properties/Therapy%20Type/Time",
+                    "type": "string",
+                    "maxLength": 255,
+                    "title": "The Therapy Type/Time schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Time-Based APD/08:00"
+                    ]
+                },
+                "Number of Day Cycles": {
+                    "$id": "#/properties/Prescription/properties/Number%20of%20Day%20Cycles",
+                    "type": "string",
+                    "maxLength": 38,
+                    "pattern": "^(\\d{1,4})$",
+                    "title": "The Number of Day Cycles schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "Number of Night Cycles": {
+                    "$id": "#/properties/Prescription/properties/Number%20of%20Night%20Cycles",
+                    "type": "string",
+                    "maxLength": 38,
+                    "pattern": "^(\\d{1,4})$",
+                    "title": "The Number of Night Cycles schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "3"
+                    ]
+                },
+                "Fill Volume": {
+                    "$id": "#/properties/Prescription/properties/Fill%20Volume",
+                    "type": "string",
+                    "maxLength": 38,
+                    "pattern": "^(\\d{1,5})$",
+                    "title": "The Fill Volume schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "2500"
+                    ]
+                },
+                "Fill Time": {
+                    "$id": "#/properties/Prescription/properties/Fill%20Time",
+                    "type": "string",
+                    "maxLength": 5,
+                    "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+                    "title": "The Fill Time schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "Dwell Time": {
+                    "$id": "#/properties/Prescription/properties/Dwell%20Time",
+                    "type": "string",
+                    "maxLength": 5,
+                    "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+                    "title": "The Dwell Time schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "01:23"
+                    ]
+                },
+                "Drain Time": {
+                    "$id": "#/properties/Prescription/properties/Drain%20Time",
+                    "type": "string",
+                    "maxLength": 5,
+                    "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+                    "title": "The Drain Time schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "Drain Volume": {
+                    "$id": "#/properties/Prescription/properties/Drain%20Volume",
+                    "type": "string",
+                    "maxLength": 38,
+                    "pattern": "^(\\d{1,5})$",
+                    "title": "The Drain Volume schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "Actual Therapy": {
+            "$id": "#/properties/Actual%20Therapy",
+            "type": "array",
+            "title": "The Actual Therapy schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "Therapy Cycle Time": "20:49:05",
+                        "Cycle Type": "Initial Drain",
+                        "CycleAttributes": {
+                            "Fill Volume (mL)": "",
+                            "Fill Time (HH:MM)": "",
+                            "Dwell Time (HH:MM)": "",
+                            "Drain Time (HH:MM)": "00:02",
+                            "Drain Volume (mL)": "34",
+                            "UF/Cycle (mL)": "11"
+                        }
+                    },
+                    {
+                        "Therapy Cycle Time": "20:51:09",
+                        "Cycle Type": "Night Cycle 1",
+                        "CycleAttributes": {
+                            "Fill Volume (mL)": "2500",
+                            "Fill Time (HH:MM)": "00:14",
+                            "Dwell Time (HH:MM)": "01:21",
+                            "Drain Time (HH:MM)": "00:20",
+                            "Drain Volume (mL)": "2304",
+                            "UF/Cycle (mL)": "-196"
+                        }
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Actual%20Therapy/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Actual%20Therapy/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "Therapy Cycle Time": "20:49:05",
+                                "Cycle Type": "Initial Drain",
+                                "CycleAttributes": {
+                                    "Fill Volume (mL)": "",
+                                    "Fill Time (HH:MM)": "",
+                                    "Dwell Time (HH:MM)": "",
+                                    "Drain Time (HH:MM)": "00:02",
+                                    "Drain Volume (mL)": "34",
+                                    "UF/Cycle (mL)": "11"
+                                }
+                            }
+                        ],
+                        "required": [
+                            "CycleAttributes"
+                        ],
+                        "properties": {
+                            "Therapy Cycle Time": {
+                                "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/Therapy%20Cycle%20Time",
+                                "type": "string",
+                                "maxLength": 10,
+                                "title": "The Therapy Cycle Time schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "20:49:05"
+                                ]
+                            },
+                            "Cycle Type": {
+                                "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/Cycle%20Type",
+                                "type": "string",
+                                "title": "The Cycle Type schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Initial Drain"
+                                ]
+                            },
+                            "CycleAttributes": {
+                                "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes",
+                                "type": "object",
+                                "title": "The CycleAttributes schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "Fill Volume (mL)": "",
+                                        "Fill Time (HH:MM)": "",
+                                        "Dwell Time (HH:MM)": "",
+                                        "Drain Time (HH:MM)": "00:02",
+                                        "Drain Volume (mL)": "34",
+                                        "UF/Cycle (mL)": "11"
+                                    }
+                                ],
+                                "required": [
+                                    "Fill Volume (mL)",
+                                    "Fill Time (HH:MM)",
+                                    "Dwell Time (HH:MM)",
+                                    "Drain Time (HH:MM)",
+                                    "Drain Volume (mL)",
+                                    "UF/Cycle (mL)"
+                                ],
+                                "properties": {
+                                    "Fill Volume (mL)": {
+                                        "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Fill%20Volume%20%28mL%29",
+                                        "type": "string",
+                                        "maxLength": 38,
+                                        "pattern": "^(\\d{1,5})$",
+                                        "title": "The Fill Volume (mL) schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            ""
+                                        ]
+                                    },
+                                    "Fill Time (HH:MM)": {
+                                        "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Fill%20Time%20%28HH%3AMM%29",
+                                        "type": "string",
+                                        "maxLength": 5,
+                                        "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+                                        "title": "The Fill Time (HH:MM) schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            ""
+                                        ]
+                                    },
+                                    "Dwell Time (HH:MM)": {
+                                        "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Dwell%20Time%20%28HH%3AMM%29",
+                                        "type": "string",
+                                        "maxLength": 5,
+                                        "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+                                        "title": "The Dwell Time (HH:MM) schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            ""
+                                        ]
+                                    },
+                                    "Drain Time (HH:MM)": {
+                                        "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Drain%20Time%20%28HH%3AMM%29",
+                                        "type": "string",
+                                        "maxLength": 5,
+                                        "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+                                        "title": "The Drain Time (HH:MM) schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "00:02"
+                                        ]
+                                    },
+                                    "Drain Volume (mL)": {
+                                        "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Drain%20Volume%20%28mL%29",
+                                        "type": "string",
+                                        "maxLength": 38,
+                                        "pattern": "^(\\d{1,5})$",
+                                        "title": "The Drain Volume (mL) schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "34"
+                                        ]
+                                    },
+                                    "UF/Cycle (mL)": {
+                                        "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/UF/Cycle%20%28mL%29",
+                                        "type": "string",
+                                        "maxLength": 38,
+                                        "pattern": "^(\\d{1,5})$",
+                                        "title": "The UF/Cycle (mL) schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "11"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "Total Therapy": {
+            "$id": "#/properties/Total%20Therapy",
+            "type": "object",
+            "title": "The Total Therapy schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "Total Therapy Volume": "10000",
+                    "Last Fill Volume": "",
+                    "Last Solution Type": "Same",
+                    "Manual Exchange Count": ""
+                }
+            ],
+            "required": [
+                "Manual Exchange Count"
+            ],
+            "properties": {
+                "Total Therapy Volume": {
+                    "$id": "#/properties/Total%20Therapy/properties/Total%20Therapy%20Volume",
+                    "type": "string",
+                    "maxLength": 38,
+                    "pattern": "^(\\d{1,5})$",
+                    "title": "The Total Therapy Volume schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "10000"
+                    ]
+                },
+                "Last Fill Volume": {
+                    "$id": "#/properties/Total%20Therapy/properties/Last%20Fill%20Volume",
+                    "type": "string",
+                    "maxLength": 38,
+                    "pattern": "^(\\d{1,5})$",
+                    "title": "The Last Fill Volume schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "Last Solution Type": {
+                    "$id": "#/properties/Total%20Therapy/properties/Last%20Solution%20Type",
+                    "type": "string",
+                    "maxLength": 50,
+                    "title": "The Last Solution Type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Same"
+                    ]
+                },
+                "Manual Exchange Count": {
+                    "$id": "#/properties/Total%20Therapy/properties/Manual%20Exchange%20Count",
+                    "type": "string",
+                    "maxLength": 38,
+                    "pattern": "^(\\d{1,4})$",
+                    "title": "The Manual Exchange Count schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

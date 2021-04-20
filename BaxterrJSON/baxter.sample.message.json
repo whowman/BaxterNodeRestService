@@ -1,0 +1,63 @@
+{
+	"Patient Info": {	
+		"Baxter Patient ID": "ST000-9091",
+		"Clinic Patient ID": "XYZ.PQR.002"
+	},
+	"Treatment Time": {	
+		"Date": "07-Dec-2020",
+		"Time": "20:49"	
+	},
+	"Vitals": {
+		"Pre-Treatment": {
+			"Weight": "9999.8",
+			"Blood Pressure": "120/80",
+			"Pulse": "95",
+			"Glucose": "100",
+			"Blood Pressure": "70",
+			"Temperature": "98.6"
+		}
+	},
+	"Prescription": {
+		"Device Program Name": "Daily - Primary",
+		"Therapy Type/Time": "Time-Based APD/08:00",
+		"Number of Day Cycles": "1",
+		"Number of Night Cycles": "3",
+		"Fill Volume": "2500",
+		"Fill Time":"",
+		"Dwell Time": "01:23",
+		"Drain Time": "",
+		"Drain Volume": "0"
+	},
+	"Actual Therapy": [
+		{
+			"Therapy Cycle Time": "20:49:05",
+			"Cycle Type" :"Initial Drain",
+			"CycleAttributes": {
+				"Fill Volume (mL)": "0",
+				"Fill Time (HH:MM)": "",
+				"Dwell Time (HH:MM)": "",
+				"Drain Time (HH:MM)": "00:02",
+				"Drain Volume (mL)": "-1",
+				"UF/Cycle (mL)": "11"
+			}
+		},
+		{
+			"Therapy Cycle Time": "20:51:09", 
+			"Cycle Type" :"Night Cycle 1",
+			"CycleAttributes": {
+				"Fill Volume (mL)": "2500",
+				"Fill Time (HH:MM)": "00:14",
+				"Dwell Time (HH:MM)": "01:21",
+				"Drain Time (HH:MM)": "00:20",
+				"Drain Volume (mL)": "2304",
+				"UF/Cycle (mL)": "196"
+			}
+		}
+	],
+	"Total Therapy": {
+		"Total Therapy Volume": "10000",
+		"Last Fill Volume": "0",
+		"Last Solution Type":"Same",
+		"Manual Exchange Count":"0"
+	}
+}

@@ -1,0 +1,111 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "http://www.davita.com/baxter.actual.therapy.schema.json",
+    "type": "object",
+    "title": "Baxter Cycler Treatment",
+    "description": "This is the json schema for a single cycler treatment by a patient from the Baxter cycler.",
+  "properties": {
+    "Actual Therapy": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Therapy Cycle Time": {
+              "type": "string"
+            },
+            "Cycle Type": {
+              "type": "string"
+            },
+            "CycleAttributes": {
+              "type": "object",
+              "properties": {
+                "Fill Volume (mL)": {
+                  "type": "string"
+                },
+                "Fill Time (HH:MM)": {
+                  "type": "string"
+                },
+                "Dwell Time (HH:MM)": {
+                  "type": "string"
+                },
+                "Drain Time (HH:MM)": {
+                  "type": "string"
+                },
+                "Drain Volume (mL)": {
+                  "type": "string"
+                },
+                "UF/Cycle (mL)": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Fill Volume (mL)",
+                "Fill Time (HH:MM)",
+                "Dwell Time (HH:MM)",
+                "Drain Time (HH:MM)",
+                "Drain Volume (mL)",
+                "UF/Cycle (mL)"
+              ]
+            }
+          },
+          "required": [
+            "Therapy Cycle Time",
+            "Cycle Type",
+            "CycleAttributes"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Therapy Cycle Time": {
+              "type": "string"
+            },
+            "Cycle Type": {
+              "type": "string"
+            },
+            "CycleAttributes": {
+              "type": "object",
+              "properties": {
+                "Fill Volume (mL)": {
+                  "type": "string"
+                },
+                "Fill Time (HH:MM)": {
+                  "type": "string"
+                },
+                "Dwell Time (HH:MM)": {
+                  "type": "string"
+                },
+                "Drain Time (HH:MM)": {
+                  "type": "string"
+                },
+                "Drain Volume (mL)": {
+                  "type": "string"
+                },
+                "UF/Cycle (mL)": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Fill Volume (mL)",
+                "Fill Time (HH:MM)",
+                "Dwell Time (HH:MM)",
+                "Drain Time (HH:MM)",
+                "Drain Volume (mL)",
+                "UF/Cycle (mL)"
+              ]
+            }
+          },
+          "required": [
+            "Therapy Cycle Time",
+            "Cycle Type",
+            "CycleAttributes"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "Actual Therapy"
+  ]
+}
