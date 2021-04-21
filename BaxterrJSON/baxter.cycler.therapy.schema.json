@@ -11,24 +11,24 @@
                 "Therapy Cycle Time": "20:49:05",
                 "Cycle Type": "Initial Drain",
                 "CycleAttributes": {
-                    "Fill Volume (mL)": "",
+                    "Fill Volume (mL)": 0,
                     "Fill Time (HH:MM)": "",
                     "Dwell Time (HH:MM)": "",
                     "Drain Time (HH:MM)": "00:02",
-                    "Drain Volume (mL)": "34",
-                    "UF/Cycle (mL)": "11"
+                    "Drain Volume (mL)": 34,
+                    "UF/Cycle (mL)": 11
                 }
             },
             {
                 "Therapy Cycle Time": "20:51:09",
                 "Cycle Type": "Night Cycle 1",
                 "CycleAttributes": {
-                    "Fill Volume (mL)": "2500",
+                    "Fill Volume (mL)": 2500,
                     "Fill Time (HH:MM)": "00:14",
                     "Dwell Time (HH:MM)": "01:21",
                     "Drain Time (HH:MM)": "00:20",
-                    "Drain Volume (mL)": "2304",
-                    "UF/Cycle (mL)": "-196"
+                    "Drain Volume (mL)": 2304,
+                    "UF/Cycle (mL)": -196
                 }
             }
         ]
@@ -60,19 +60,17 @@
           "default": {},
           "examples": [
               {
-                  "Fill Volume (mL)": "",
+                  "Fill Volume (mL)": 0,
                   "Fill Time (HH:MM)": "",
                   "Dwell Time (HH:MM)": "",
                   "Drain Time (HH:MM)": "00:02",
-                  "Drain Volume (mL)": "34",
-                  "UF/Cycle (mL)": "11"
+                  "Drain Volume (mL)": 34,
+                  "UF/Cycle (mL)": 11
               }
           ],
 	      "properties": {
 		        "Fill Volume (mL)": {
-		          "type": "string",
-                  "maxLength": 38,
-                  "pattern": "^(\\d{1,5})$",
+		          "type": "integer",
                   "title": "The Fill Volume (mL) schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
@@ -114,9 +112,7 @@
                   ]
 		        },
 		        "Drain Volume (mL)": {
-		          "type": "string",
-                  "maxLength": 38,
-                  "pattern": "^(\\d{1,5})$",
+		          "type": "integer",
                   "title": "The Drain Volume (mL) schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
@@ -125,9 +121,7 @@
                   ]
 		        },
 		        "UF/Cycle (mL)": {
-		          "type": "string",
-                  "maxLength": 38,
-                  "pattern": "^(\\d{1,5})$",
+		          "type": "integer",
                   "title": "The UF/Cycle (mL) schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
