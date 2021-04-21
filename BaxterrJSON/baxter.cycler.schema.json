@@ -27,45 +27,45 @@
             "Prescription": {
                 "Device Program Name": "Daily - Primary",
                 "Therapy Type/Time": "Time-Based APD/08:00",
-                "Number of Day Cycles": "1",
-                "Number of Night Cycles": "3",
-                "Fill Volume": "2500",
+                "Number of Day Cycles": 1,
+                "Number of Night Cycles": 3,
+                "Fill Volume": 2500,
                 "Fill Time": "",
                 "Dwell Time": "01:23",
                 "Drain Time": "",
-                "Drain Volume": ""
+                "Drain Volume": 0
             },
             "Actual Therapy": [
                 {
                     "Therapy Cycle Time": "20:49:05",
                     "Cycle Type": "Initial Drain",
                     "CycleAttributes": {
-                        "Fill Volume (mL)": "",
+                        "Fill Volume (mL)": 0,
                         "Fill Time (HH:MM)": "",
                         "Dwell Time (HH:MM)": "",
                         "Drain Time (HH:MM)": "00:02",
-                        "Drain Volume (mL)": "34",
-                        "UF/Cycle (mL)": "11"
+                        "Drain Volume (mL)": 34,
+                        "UF/Cycle (mL)": 11
                     }
                 },
                 {
                     "Therapy Cycle Time": "20:51:09",
                     "Cycle Type": "Night Cycle 1",
                     "CycleAttributes": {
-                        "Fill Volume (mL)": "2500",
+                        "Fill Volume (mL)": 2500,
                         "Fill Time (HH:MM)": "00:14",
                         "Dwell Time (HH:MM)": "01:21",
                         "Drain Time (HH:MM)": "00:20",
-                        "Drain Volume (mL)": "2304",
-                        "UF/Cycle (mL)": "-196"
+                        "Drain Volume (mL)": 2304,
+                        "UF/Cycle (mL)": -196
                     }
                 }
             ],
             "Total Therapy": {
-                "Total Therapy Volume": "10000",
-                "Last Fill Volume": "",
+                "Total Therapy Volume": 10000,
+                "Last Fill Volume": 0,
                 "Last Solution Type": "Same",
-                "Manual Exchange Count": ""
+                "Manual Exchange Count": 0
             }
         }
     ],
@@ -278,13 +278,13 @@
                 {
                     "Device Program Name": "Daily - Primary",
                     "Therapy Type/Time": "Time-Based APD/08:00",
-                    "Number of Day Cycles": "1",
-                    "Number of Night Cycles": "3",
-                    "Fill Volume": "2500",
+                    "Number of Day Cycles": 1,
+                    "Number of Night Cycles": 3,
+                    "Fill Volume": 2500,
                     "Fill Time": "",
                     "Dwell Time": "01:23",
                     "Drain Time": "",
-                    "Drain Volume": ""
+                    "Drain Volume": 0
                 }
             ],
             "properties": {
@@ -312,9 +312,7 @@
                 },
                 "Number of Day Cycles": {
                     "$id": "#/properties/Prescription/properties/Number%20of%20Day%20Cycles",
-                    "type": "string",
-                    "maxLength": 38,
-                    "pattern": "^(\\d{1,4})$",
+                    "type": "integer",
                     "title": "The Number of Day Cycles schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -324,9 +322,7 @@
                 },
                 "Number of Night Cycles": {
                     "$id": "#/properties/Prescription/properties/Number%20of%20Night%20Cycles",
-                    "type": "string",
-                    "maxLength": 38,
-                    "pattern": "^(\\d{1,4})$",
+                    "type": "integer",
                     "title": "The Number of Night Cycles schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -336,9 +332,7 @@
                 },
                 "Fill Volume": {
                     "$id": "#/properties/Prescription/properties/Fill%20Volume",
-                    "type": "string",
-                    "maxLength": 38,
-                    "pattern": "^(\\d{1,5})$",
+                    "type": "integer",
                     "title": "The Fill Volume schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -384,9 +378,7 @@
                 },
                 "Drain Volume": {
                     "$id": "#/properties/Prescription/properties/Drain%20Volume",
-                    "type": "string",
-                    "maxLength": 38,
-                    "pattern": "^(\\d{1,5})$",
+                    "type": "sinteger",
                     "title": "The Drain Volume schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -409,24 +401,24 @@
                         "Therapy Cycle Time": "20:49:05",
                         "Cycle Type": "Initial Drain",
                         "CycleAttributes": {
-                            "Fill Volume (mL)": "",
+                            "Fill Volume (mL)": 0,
                             "Fill Time (HH:MM)": "",
                             "Dwell Time (HH:MM)": "",
                             "Drain Time (HH:MM)": "00:02",
-                            "Drain Volume (mL)": "34",
-                            "UF/Cycle (mL)": "11"
+                            "Drain Volume (mL)": 34,
+                            "UF/Cycle (mL)": 11
                         }
                     },
                     {
                         "Therapy Cycle Time": "20:51:09",
                         "Cycle Type": "Night Cycle 1",
                         "CycleAttributes": {
-                            "Fill Volume (mL)": "2500",
+                            "Fill Volume (mL)": 2500,
                             "Fill Time (HH:MM)": "00:14",
                             "Dwell Time (HH:MM)": "01:21",
                             "Drain Time (HH:MM)": "00:20",
-                            "Drain Volume (mL)": "2304",
-                            "UF/Cycle (mL)": "-196"
+                            "Drain Volume (mL)": 2304,
+                            "UF/Cycle (mL)": -196
                         }
                     }
                 ]
@@ -438,7 +430,7 @@
                     {
                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0",
                         "type": "object",
-                        "title": "The first anyOf schema",
+                        "title": "The first any Of schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
                         "examples": [
@@ -446,12 +438,12 @@
                                 "Therapy Cycle Time": "20:49:05",
                                 "Cycle Type": "Initial Drain",
                                 "CycleAttributes": {
-                                    "Fill Volume (mL)": "",
+                                    "Fill Volume (mL)": 0,
                                     "Fill Time (HH:MM)": "",
                                     "Dwell Time (HH:MM)": "",
                                     "Drain Time (HH:MM)": "00:02",
-                                    "Drain Volume (mL)": "34",
-                                    "UF/Cycle (mL)": "11"
+                                    "Drain Volume (mL)": 34,
+                                    "UF/Cycle (mL)": 11
                                 }
                             }
                         ],
@@ -488,12 +480,12 @@
                                 "default": {},
                                 "examples": [
                                     {
-                                        "Fill Volume (mL)": "",
+                                        "Fill Volume (mL)": 0,
                                         "Fill Time (HH:MM)": "",
                                         "Dwell Time (HH:MM)": "",
                                         "Drain Time (HH:MM)": "00:02",
-                                        "Drain Volume (mL)": "34",
-                                        "UF/Cycle (mL)": "11"
+                                        "Drain Volume (mL)": 34,
+                                        "UF/Cycle (mL)": 11
                                     }
                                 ],
                                 "required": [
@@ -507,9 +499,7 @@
                                 "properties": {
                                     "Fill Volume (mL)": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Fill%20Volume%20%28mL%29",
-                                        "type": "string",
-                                        "maxLength": 38,
-                                        "pattern": "^(\\d{1,5})$",
+                                        "type": "integer",
                                         "title": "The Fill Volume (mL) schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
@@ -555,9 +545,7 @@
                                     },
                                     "Drain Volume (mL)": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Drain%20Volume%20%28mL%29",
-                                        "type": "string",
-                                        "maxLength": 38,
-                                        "pattern": "^(\\d{1,5})$",
+                                        "type": "integer",
                                         "title": "The Drain Volume (mL) schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
@@ -567,9 +555,7 @@
                                     },
                                     "UF/Cycle (mL)": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/UF/Cycle%20%28mL%29",
-                                        "type": "string",
-                                        "maxLength": 38,
-                                        "pattern": "^(\\d{1,5})$",
+                                        "type": "integer",
                                         "title": "The UF/Cycle (mL) schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
@@ -594,10 +580,10 @@
             "default": {},
             "examples": [
                 {
-                    "Total Therapy Volume": "10000",
-                    "Last Fill Volume": "",
+                    "Total Therapy Volume": 10000,
+                    "Last Fill Volume": 0,
                     "Last Solution Type": "Same",
-                    "Manual Exchange Count": ""
+                    "Manual Exchange Count": 0
                 }
             ],
             "required": [
@@ -606,9 +592,7 @@
             "properties": {
                 "Total Therapy Volume": {
                     "$id": "#/properties/Total%20Therapy/properties/Total%20Therapy%20Volume",
-                    "type": "string",
-                    "maxLength": 38,
-                    "pattern": "^(\\d{1,5})$",
+                    "type": "integer",
                     "title": "The Total Therapy Volume schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -618,9 +602,7 @@
                 },
                 "Last Fill Volume": {
                     "$id": "#/properties/Total%20Therapy/properties/Last%20Fill%20Volume",
-                    "type": "string",
-                    "maxLength": 38,
-                    "pattern": "^(\\d{1,5})$",
+                    "type": "integer",
                     "title": "The Last Fill Volume schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -641,9 +623,7 @@
                 },
                 "Manual Exchange Count": {
                     "$id": "#/properties/Total%20Therapy/properties/Manual%20Exchange%20Count",
-                    "type": "string",
-                    "maxLength": 38,
-                    "pattern": "^(\\d{1,4})$",
+                    "type": "integer",
                     "title": "The Manual Exchange Count schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
