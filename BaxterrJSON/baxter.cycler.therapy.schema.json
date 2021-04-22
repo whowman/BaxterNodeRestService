@@ -11,24 +11,24 @@
                 "Therapy Cycle Time": "20:49:05",
                 "Cycle Type": "Initial Drain",
                 "CycleAttributes": {
-                    "Fill Volume (mL)": 0,
-                    "Fill Time (HH:MM)": "",
-                    "Dwell Time (HH:MM)": "",
-                    "Drain Time (HH:MM)": "00:02",
-                    "Drain Volume (mL)": 34,
-                    "UF/Cycle (mL)": 11
+                    "Fill Volume": 0,
+                    "Fill Time": "",
+                    "Dwell Time": "",
+                    "Drain Time": "00:02",
+                    "Drain Volume": 34,
+                    "UF/Cycle": 11
                 }
             },
             {
                 "Therapy Cycle Time": "20:51:09",
                 "Cycle Type": "Night Cycle 1",
                 "CycleAttributes": {
-                    "Fill Volume (mL)": 2500,
-                    "Fill Time (HH:MM)": "00:14",
-                    "Dwell Time (HH:MM)": "01:21",
-                    "Drain Time (HH:MM)": "00:20",
-                    "Drain Volume (mL)": 2304,
-                    "UF/Cycle (mL)": -196
+                    "Fill Volume": 2500,
+                    "Fill Time": "00:14",
+                    "Dwell Time": "01:21",
+                    "Drain Time": "00:20",
+                    "Drain Volume": 2304,
+                    "UF/Cycle": -196
                 }
             }
         ]
@@ -60,69 +60,69 @@
           "default": {},
           "examples": [
               {
-                  "Fill Volume (mL)": 0,
-                  "Fill Time (HH:MM)": "",
-                  "Dwell Time (HH:MM)": "",
-                  "Drain Time (HH:MM)": "00:02",
-                  "Drain Volume (mL)": 34,
-                  "UF/Cycle (mL)": 11
+                  "Fill Volume": 0,
+                  "Fill Time": "",
+                  "Dwell Time": "",
+                  "Drain Time": "00:02",
+                  "Drain Volume": 34,
+                  "UF/Cycle": 11
               }
           ],
 	      "properties": {
-		        "Fill Volume (mL)": {
+		        "Fill Volume": {
 		          "type": "integer",
-                  "title": "The Fill Volume (mL) schema",
+                  "title": "The Fill Volume schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
                   "examples": [
                       ""
                   ]
 		        },
-		        "Fill Time (HH:MM)": {
+		        "Fill Time": {
 		          "type": "string",
                   "maxLength": 5,
                   "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
-                  "title": "The Fill Time (HH:MM) schema",
+                  "title": "The Fill Time schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
                   "examples": [
                       ""
                   ]
 		        },
-		        "Dwell Time (HH:MM)": {
+		        "Dwell Time": {
 		          "type": "string",
                   "maxLength": 5,
                   "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
-                  "title": "The Dwell Time (HH:MM) schema",
+                  "title": "The Dwell Time schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
                   "examples": [
                       ""
                   ]
 		        },
-		        "Drain Time (HH:MM)": {
+		        "Drain Time": {
 		          "type": "string",
                   "maxLength": 5,
                   "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
-                  "title": "The Drain Time (HH:MM) schema",
+                  "title": "The Drain Time schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
                   "examples": [
                       "00:02"
                   ]
 		        },
-		        "Drain Volume (mL)": {
+		        "Drain Volume": {
 		          "type": "integer",
-                  "title": "The Drain Volume (mL) schema",
+                  "title": "The Drain Volume schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
                   "examples": [
                       "34"
                   ]
 		        },
-		        "UF/Cycle (mL)": {
+		        "UF/Cycle": {
 		          "type": "integer",
-                  "title": "The UF/Cycle (mL) schema",
+                  "title": "The UF/Cycle schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": "",
                   "examples": [
@@ -131,12 +131,12 @@
 		        }
 		      },
 	      "required": [
-	        "Fill Volume (mL)",
-	        "Fill Time (HH:MM)",
-	        "Dwell Time (HH:MM)",
-	        "Drain Time (HH:MM)",
-	        "Drain Volume (mL)",
-	        "UF/Cycle (mL)"
+	        "Fill Volume",
+	        "Fill Time",
+	        "Dwell Time",
+	        "Drain Time",
+	        "Drain Volume",
+	        "UF/Cycle"
 	      ]
 	    }
     },

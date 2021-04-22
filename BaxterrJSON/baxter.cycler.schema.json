@@ -18,7 +18,8 @@
             "Vitals": {
                 "Pre-Treatment": {
                     "Weight": "95.8",
-                    "Blood Pressure": "70",
+                    "Blood Pressure Systolic": "120",
+                    "Blood Pressure Diastolic": "80",
                     "Pulse": "95",
                     "Glucose": "100",
                     "Temperature": "98.6"
@@ -40,24 +41,24 @@
                     "Therapy Cycle Time": "20:49:05",
                     "Cycle Type": "Initial Drain",
                     "CycleAttributes": {
-                        "Fill Volume (mL)": 0,
-                        "Fill Time (HH:MM)": "",
-                        "Dwell Time (HH:MM)": "",
-                        "Drain Time (HH:MM)": "00:02",
-                        "Drain Volume (mL)": 34,
-                        "UF/Cycle (mL)": 11
+                        "Fill Volume": 0,
+                        "Fill Time": "01:21",
+                        "Dwell Time": "01:21",
+                        "Drain Time": "00:02",
+                        "Drain Volume": 34,
+                        "UF/Cycle": 11
                     }
                 },
                 {
                     "Therapy Cycle Time": "20:51:09",
                     "Cycle Type": "Night Cycle 1",
                     "CycleAttributes": {
-                        "Fill Volume (mL)": 2500,
-                        "Fill Time (HH:MM)": "00:14",
-                        "Dwell Time (HH:MM)": "01:21",
-                        "Drain Time (HH:MM)": "00:20",
-                        "Drain Volume (mL)": 2304,
-                        "UF/Cycle (mL)": -196
+                        "Fill Volume": 2500,
+                        "Fill Time": "00:14",
+                        "Dwell Time": "01:21",
+                        "Drain Time": "00:20",
+                        "Drain Volume": 2304,
+                        "UF/Cycle": -196
                     }
                 }
             ],
@@ -170,7 +171,8 @@
                 {
                     "Pre-Treatment": {
                         "Weight": "95.8",
-                        "Blood Pressure": "70",
+                        "Blood Pressure Systolic": "120",
+                        "Blood Pressure Diastolic": "80",
                         "Pulse": "95",
                         "Glucose": "100",
                         "Temperature": "98.6"
@@ -190,7 +192,8 @@
                     "examples": [
                         {
                             "Weight": "95.8",
-                            "Blood Pressure": "70",
+                            "Blood Pressure Systolic": "120",
+                            "Blood Pressure Diastolic": "80",
                             "Pulse": "95",
                             "Glucose": "100",
                             "Temperature": "98.6"
@@ -198,7 +201,8 @@
                     ],
                     "required": [
                         "Weight",
-                        "Blood Pressure",
+                        "Blood Pressure Systolic",
+                        "Blood Pressure Diastolic",
                         "Pulse",
                         "Glucose",
                         "Temperature"
@@ -215,11 +219,22 @@
                                 "95.8"
                             ]
                         },
-                        "Blood Pressure": {
-                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Blood%20Pressure",
+                        "Blood Pressure Systolic": {
+                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Blood%20Pressure%20Systolic",
                             "type": "string",
                             "maxLength": 50,
-                            "title": "The Blood Pressure schema",
+                            "title": "The Blood Pressure Systolic schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "70"
+                            ]
+                        },
+                        "Blood Pressure Diastolic": {
+                            "$id": "#/properties/Vitals/properties/Pre-Treatment/properties/Blood%20Pressure20Diastolic",
+                            "type": "string",
+                            "maxLength": 50,
+                            "title": "The Blood Pressure Diastolic schema",
                             "description": "An explanation about the purpose of this instance.",
                             "default": "",
                             "examples": [
@@ -401,24 +416,24 @@
                         "Therapy Cycle Time": "20:49:05",
                         "Cycle Type": "Initial Drain",
                         "CycleAttributes": {
-                            "Fill Volume (mL)": 0,
-                            "Fill Time (HH:MM)": "",
-                            "Dwell Time (HH:MM)": "",
-                            "Drain Time (HH:MM)": "00:02",
-                            "Drain Volume (mL)": 34,
-                            "UF/Cycle (mL)": 11
+                            "Fill Volume": 0,
+                            "Fill Time": "",
+                            "Dwell Time": "",
+                            "Drain Time": "00:02",
+                            "Drain Volume": 34,
+                            "UF/Cycle": 11
                         }
                     },
                     {
                         "Therapy Cycle Time": "20:51:09",
                         "Cycle Type": "Night Cycle 1",
                         "CycleAttributes": {
-                            "Fill Volume (mL)": 2500,
-                            "Fill Time (HH:MM)": "00:14",
-                            "Dwell Time (HH:MM)": "01:21",
-                            "Drain Time (HH:MM)": "00:20",
-                            "Drain Volume (mL)": 2304,
-                            "UF/Cycle (mL)": -196
+                            "Fill Volume": 2500,
+                            "Fill Time": "00:14",
+                            "Dwell Time": "01:21",
+                            "Drain Time": "00:20",
+                            "Drain Volume": 2304,
+                            "UF/Cycle": -196
                         }
                     }
                 ]
@@ -438,12 +453,12 @@
                                 "Therapy Cycle Time": "20:49:05",
                                 "Cycle Type": "Initial Drain",
                                 "CycleAttributes": {
-                                    "Fill Volume (mL)": 0,
-                                    "Fill Time (HH:MM)": "",
-                                    "Dwell Time (HH:MM)": "",
-                                    "Drain Time (HH:MM)": "00:02",
-                                    "Drain Volume (mL)": 34,
-                                    "UF/Cycle (mL)": 11
+                                    "Fill Volume": 0,
+                                    "Fill Time": "",
+                                    "Dwell Time": "",
+                                    "Drain Time": "00:02",
+                                    "Drain Volume": 34,
+                                    "UF/Cycle": 11
                                 }
                             }
                         ],
@@ -480,83 +495,83 @@
                                 "default": {},
                                 "examples": [
                                     {
-                                        "Fill Volume (mL)": 0,
-                                        "Fill Time (HH:MM)": "",
-                                        "Dwell Time (HH:MM)": "",
-                                        "Drain Time (HH:MM)": "00:02",
-                                        "Drain Volume (mL)": 34,
-                                        "UF/Cycle (mL)": 11
+                                        "Fill Volume": 0,
+                                        "Fill Time": "",
+                                        "Dwell Time": "",
+                                        "Drain Time": "00:02",
+                                        "Drain Volume": 34,
+                                        "UF/Cycle": 11
                                     }
                                 ],
                                 "required": [
-                                    "Fill Volume (mL)",
-                                    "Fill Time (HH:MM)",
-                                    "Dwell Time (HH:MM)",
-                                    "Drain Time (HH:MM)",
-                                    "Drain Volume (mL)",
-                                    "UF/Cycle (mL)"
+                                    "Fill Volume",
+                                    "Fill Time",
+                                    "Dwell Time",
+                                    "Drain Time",
+                                    "Drain Volume",
+                                    "UF/Cycle"
                                 ],
                                 "properties": {
-                                    "Fill Volume (mL)": {
+                                    "Fill Volume": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Fill%20Volume%20%28mL%29",
                                         "type": "integer",
-                                        "title": "The Fill Volume (mL) schema",
+                                        "title": "The Fill Volume schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
                                         "examples": [
                                             ""
                                         ]
                                     },
-                                    "Fill Time (HH:MM)": {
+                                    "Fill Time": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Fill%20Time%20%28HH%3AMM%29",
                                         "type": "string",
                                         "maxLength": 5,
                                         "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
-                                        "title": "The Fill Time (HH:MM) schema",
+                                        "title": "The Fill Time schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
                                         "examples": [
                                             ""
                                         ]
                                     },
-                                    "Dwell Time (HH:MM)": {
+                                    "Dwell Time": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Dwell%20Time%20%28HH%3AMM%29",
                                         "type": "string",
                                         "maxLength": 5,
                                         "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
-                                        "title": "The Dwell Time (HH:MM) schema",
+                                        "title": "The Dwell Time schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
                                         "examples": [
                                             ""
                                         ]
                                     },
-                                    "Drain Time (HH:MM)": {
+                                    "Drain Time": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Drain%20Time%20%28HH%3AMM%29",
                                         "type": "string",
                                         "maxLength": 5,
                                         "patern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
-                                        "title": "The Drain Time (HH:MM) schema",
+                                        "title": "The Drain Time schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
                                         "examples": [
                                             "00:02"
                                         ]
                                     },
-                                    "Drain Volume (mL)": {
+                                    "Drain Volume": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/Drain%20Volume%20%28mL%29",
                                         "type": "integer",
-                                        "title": "The Drain Volume (mL) schema",
+                                        "title": "The Drain Volume schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
                                         "examples": [
                                             "34"
                                         ]
                                     },
-                                    "UF/Cycle (mL)": {
+                                    "UF/Cycle": {
                                         "$id": "#/properties/Actual%20Therapy/items/anyOf/0/properties/CycleAttributes/properties/UF/Cycle%20%28mL%29",
                                         "type": "integer",
-                                        "title": "The UF/Cycle (mL) schema",
+                                        "title": "The UF/Cycle schema",
                                         "description": "An explanation about the purpose of this instance.",
                                         "default": "",
                                         "examples": [
